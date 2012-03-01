@@ -1,0 +1,18 @@
+{
+    "name": "SinonServerSugar"
+  , "description": "Write less on mocking xhr with sinonjs"
+  , "version": "0.0.1"
+  , "homepage": "https://github.com/zyll/SinonServerSugar"
+  , "authors": [
+        "Gilles.robit <@zyll>"
+    ]
+  , "keywords": [ "test"]
+  , "main": "sinon_server_sugar.js"
+  , "files": [
+      "sinon_server_sugar.js"
+  ]
+  , "dependencies": {
+      "sinon": "",
+      "underscore": ""
+  }
+}
