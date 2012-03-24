@@ -19,7 +19,12 @@ class Response
     @default()
 
   with: (options) =>
-    _.extend @options, options
+    data = options
+    if _.isFunction(options.url) && _.isFunction(options.toJSON)
+      data =
+        url: options.url()
+        content: JSON.stringify options.toJSON()
+    _.extend @options, data
     @
 
   defaultOptions: ->
@@ -44,5 +49,9 @@ class Response
 
   restore: =>
     @server.restore.call @server
+
+  log: =>
+    console?.log?(@options)
+    @
 
 window.Response = Response
