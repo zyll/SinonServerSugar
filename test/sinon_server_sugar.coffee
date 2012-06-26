@@ -1,5 +1,7 @@
 describe "Sugar provided ", ->
+
   describe "Response", ->
+
     it 'is defined', ->
       expect(Response).toBeDefined()
 
@@ -13,11 +15,13 @@ describe "Sugar provided ", ->
       spy1 = sinon.spy()
       spy2 = sinon.spy()
       @xhr.with(url: '/steven').queue()
-      @xhr.with(url: '/steven/seagal').queue()
+      @xhr.queue url: '/steven/seagal'
       $.get('/steven').done spy1
-      @xhr.server.respond()
+      @xhr.respond()
       $.get('/steven/seagal').done spy2
-      @xhr.server.respond()
+      @xhr.respond()
       
       expect(spy1).toHaveBeenCalledOnce()
       expect(spy2).toHaveBeenCalledOnce()
+
+   # todo test using backbone model

@@ -39,7 +39,8 @@ class Response
     @options = @defaultOptions()
     @
 
-  queue: =>
+  queue: (options) =>
+    @with(options) if options
     @server.respondWith @options.method, @options.url, [
       @options.status
       @options.headers
@@ -50,8 +51,14 @@ class Response
   restore: =>
     @server.restore.call @server
 
-  log: =>
-    console?.log?(@options)
+  respond: =>
+    @server.respond.call @server
+
+  log: (key) =>
+    if key
+      console?.log?(@options[key])
+    else
+      console?.log?(@options)
     @
 
 window.Response = Response
