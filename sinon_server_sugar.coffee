@@ -61,4 +61,4 @@ class Response
       console?.log?(@options)
     @
 
-window.Response = Response
+@Response = Response
