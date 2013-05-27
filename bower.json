@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "sinon_server_sugar.js",
   "ignore": [
+    "**/*.*",
     "node_modules",
     "components"
   ]
