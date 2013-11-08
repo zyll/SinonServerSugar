@@ -5,7 +5,7 @@ Not a lot of stuf, i often write less code when using it.
       @xhr = (new Response).with(
         content: JSON.stringify @model.toJSON()
         url: @segment.url())
-      @xhr.with(method: 'POST').queue()
+      @xhr.queue(method: 'POST')
       @xhr.server.respond()
 
 # Default
