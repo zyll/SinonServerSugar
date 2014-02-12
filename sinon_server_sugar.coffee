@@ -1,6 +1,6 @@
 #
 # Shorten helper to stack responses on a sinon fake server
-# 
+#
 # @todo license
 # @todo commonjs module
 #
@@ -13,7 +13,8 @@
 #      "Content-Type": "application/json"
 #    content: ''
 
-class Response
+class @Response
+
   constructor: (server) ->
     @server = server || sinon.fakeServer.create()
     @default()
@@ -33,7 +34,7 @@ class Response
     status: 200
     headers:
       "Content-Type": "application/json"
-    content: ''
+    content: '{}'
 
   default: =>
     @options = @defaultOptions()
@@ -49,10 +50,10 @@ class Response
     @
 
   restore: =>
-    @server.restore.call @server
+    @server.restore()
 
   respond: =>
-    @server.respond.call @server
+    @server.respond()
 
   log: (key) =>
     if key
@@ -60,5 +61,3 @@ class Response
     else
       console?.log?(@options)
     @
-
-@Response = Response

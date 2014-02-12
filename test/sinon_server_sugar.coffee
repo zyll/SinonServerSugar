@@ -3,7 +3,7 @@ describe "Sugar provided ", ->
   describe "Response", ->
 
     it 'is defined', ->
-      expect(Response).toBeDefined()
+      expect(Response).to.exist
 
     beforeEach ->
       @xhr = new Response
@@ -14,14 +14,15 @@ describe "Sugar provided ", ->
     it 'can queue mock xhr with sugar', ->
       spy1 = sinon.spy()
       spy2 = sinon.spy()
-      @xhr.with(url: '/steven').queue()
-      @xhr.queue url: '/steven/seagal'
+      @xhr.with(url: '/steven').log().queue()
+      @xhr.queue(url: '/steven/seagal').log()
       $.get('/steven').done spy1
       @xhr.respond()
       $.get('/steven/seagal').done spy2
       @xhr.respond()
-      
-      expect(spy1).toHaveBeenCalledOnce()
-      expect(spy2).toHaveBeenCalledOnce()
+
+      console.log spy1.called, spy2.called
+      expect(spy1.calledOnce).to.be.true
+      expect(spy2.calledOnce).to.be.true
 
    # todo test using backbone model

@@ -1,18 +1,43 @@
 {
-    "name": "SinonServerSugar"
-  , "description": "Write less on mocking xhr with sinonjs"
-  , "version": "0.0.1"
-  , "homepage": "https://github.com/zyll/SinonServerSugar"
-  , "authors": [
-        "Gilles.robit <@zyll>"
-    ]
-  , "keywords": [ "test"]
-  , "main": "sinon_server_sugar.js"
-  , "files": [
-      "sinon_server_sugar.js"
-  ]
-  , "dependencies": {
-      "sinon": "",
-      "underscore": ""
-  }
+  "name": "SinonServerSugar",
+  "description": "Write less on mocking xhr with sinonjs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zyll/SinonServerSugar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zyll/SinonServerSugar.git"
+  },
+  "authors": [
+    "Gilles.robit <@zyll>"
+  ],
+  "keywords": [
+    "test"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "main": "sinon_server_sugar.js",
+  "files": [
+    "sinon_server_sugar.js"
+  ],
+  "dependencies": {
+    "sinon": ">=1.8.1",
+    "underscore": ""
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-coffee": "~0.8.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-coffeelint": "0.0.8",
+    "grunt-mocha": "~0.4.10",
+    "mocha": "~1.17.0",
+    "chai": "~1.8.1",
+    "sinon-chai": "~2.4.0",
+    "lodash": "~2.4.1",
+    "jquery": "~2.1.0"
+  },
+  "license": "MIT"
 }

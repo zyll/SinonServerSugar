@@ -15,4 +15,8 @@ Not a lot of stuf, i often write less code when using it.
       status: 200
       headers:
         "Content-Type": "application/json"
-      content: ''
+      content: '{}'
+
+# Compile and test
+
+      npm install && grunt
